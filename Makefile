@@ -1372,6 +1372,7 @@ endif
 # Force app building for current building targets can not auto detect code update
 ifeq ($(filter $(first_target),$(1) $(1)-build build), $(first_target))
 $(1)-build: _$(1)
+	$$(Q)touch $$(call __stamp_$(1),build)
 else
 $(1)-build: $$(call __stamp_$(1),build)
 endif

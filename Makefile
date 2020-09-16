@@ -1702,7 +1702,7 @@ else
 endif
 
 ifeq ($(firstword $(MAKECMDGOALS)),bsp)
-bsp: force-bsp-checkout
+bsp: bsp-cleanstamp bsp-checkout
 PHONY += bsp
 endif
 
